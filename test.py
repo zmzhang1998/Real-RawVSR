@@ -55,8 +55,6 @@ for test_data in tqdm(test_dataloader):
 
         # Save image
         if opt.save_image:
-
-            # utils.save_RGB(HR_RGB_gt, str(opt.scale), test_data['RGB_gt_name'], 'GT')
             utils.save_RGB(HR_RGB_cor, str(opt.scale), test_data['RGB_gt_name'], 'ours')
 
 test_rgb_cor_psnr = sum(rgb_cor_psnr_list) / len(rgb_cor_psnr_list)
