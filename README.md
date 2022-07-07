@@ -43,10 +43,11 @@ Deformable convlution setup,run:
 
 ### Prepare Data
 
-Download Real-RawVSR dataset. Put them in the dataset folder.
+Download Real-RawVSR dataset from Baidu Netdisk. Put them in the dataset folder.
 
 ### Test
 
+Download test data from [Google Drive](https://drive.google.com/file/d/1TfxhmGNLsGzDSZiRLKqrajUGyyhUF_CK/view?usp=sharing). Put them in the dataset folder.<br/>
 Download trained model from [Google Drive](https://drive.google.com/drive/folders/1zBMWiRq352HvurnVDxG0t-_OPVXAwtcQ?usp=sharing). Put them in the weight_checkpoints folder.
 Test 4X data, run:
   ```
