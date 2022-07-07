@@ -47,7 +47,7 @@ Download Real-RawVSR dataset. Put them in the dataset folder.
 
 ### Test
 
-Download trained model from Baidu Netdisk. Put them in the weight_checkpoints folder.
+Download trained model from [Google Drive](https://drive.google.com/drive/folders/1zBMWiRq352HvurnVDxG0t-_OPVXAwtcQ?usp=sharing). Put them in the weight_checkpoints folder.
 Test 4X data, run:
   ```
   python test.py --gpu_id 0 --scale 4 --save_image True
