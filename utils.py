@@ -1,5 +1,4 @@
 import os
-import cv2
 import torch
 import torchvision.utils as torchutils
 import torch.nn.functional as F
@@ -18,31 +17,6 @@ def save_checkpoints(state, is_best, save_dir):
         torch.save(state, path + 'best.pth')
 
 
-def save_feamap(image, scale, save_name, model_name, i):
-
-    path = './results/fea_map/' + scale + 'X/' + model_name
-    if not os.path.exists(path):
-        os.makedirs(path)
-
-    image = image.cpu().numpy()
-    batch_num = len(image)
-
-    for idx in range(batch_num):
-
-        image = (image[idx] - np.min(image[idx])) / (np.max(image[idx]) - np.min(image[idx]))
-        cv2.imwrite(path + os.path.basename(save_name[idx]).replace('.png', '_{:d}.jpg'.format(i)), np.uint8(image*255))
-
-def save_RGB_LR(image, scale, save_name, model_name):
-
-    savepath = './results/RGB/' + scale + 'X/'
-    if not os.path.exists(savepath):
-        os.makedirs(savepath)
-
-    batch_num = len(image)
-
-    for idx in range(batch_num):
-        torchutils.save_image(image[idx], savepath + os.path.basename(save_name[idx]).replace('LR', 'SR').replace('.png', '_{:s}.png'.format(model_name)))
-
 def save_RGB(image, scale, save_name, model_name):
 
     savepath = './results/RGB/' + scale + 'X/'
@@ -53,24 +27,14 @@ def save_RGB(image, scale, save_name, model_name):
 
     for idx in range(batch_num):
         torchutils.save_image(image[idx], savepath + os.path.basename(save_name[idx]).replace('HR', 'SR').replace('.png', '_{:s}.png'.format(model_name)))
-        # torchutils.save_image(image[idx], savepath + os.path.basename(save_name[idx]))
 
-def save_RGB_RawVD(image, scale, save_name, model_name):
-
-    savepath = './results/RawVD_diff/' + scale + 'X/'
-    if not os.path.exists(savepath):
-        os.makedirs(savepath)
-
-    batch_num = len(image)
-
-    for idx in range(batch_num):
-        torchutils.save_image(image[idx], savepath + os.path.basename(save_name[idx]).replace('.png', '_{:s}.png'.format(model_name)))
 
 def get_loss(out_im, gt_im, mask=None):
     if mask is None:
         return torch.abs(out_im - gt_im).mean()
     else:
         return torch.abs((out_im - gt_im) * mask).mean()
+
 
 def get_CharbonnierLoss(out_im, gt_im, valid=None):
     if valid is None:
@@ -81,6 +45,7 @@ def get_CharbonnierLoss(out_im, gt_im, valid=None):
         diff = out_im - gt_im
         loss = torch.sqrt(diff * diff + 1e-6) * valid
         return loss.mean()
+
 
 def get_mseloss(out_im, gt_im, valid=None):
     if valid is None:
