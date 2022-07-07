@@ -62,7 +62,7 @@ Train 4X data, run:
 ## Acknowledgement
 
 Our work and implementations are inspired by following projects:<br/>
-[EDVR] (https://github.com/xinntao/EDVR)<br/>
+[EDVR](https://github.com/xinntao/EDVR) <br/>
 [RViDeNet] (https://github.com/cao-cong/RViDeNet)<br/>
 [RawVSR] (https://github.com/proteus1991/RawVSR)<br/>
 [EBSR] (https://github.com/Algolzw/EBSR)<br/>
