@@ -16,11 +16,11 @@ This repository contains official implementation of Real-RawVSR: Real-World Raw 
   <img width="600" src="https://github.com/zmzhang1998/Real-RawVSR/blob/main/images/dataset.jpg">
 </p>
 
-You can download our dataset from Baidu Netdisk. For each magnification scale, there are 150 video pairs and each video contains about 50 frames (To make the movements between neighboring frames more obvious, for each video, we extract frames from the original 150 frames with a step size of three, resulting in a 50 frame sequence). The Bayer pattern of raw data is RGGB, the black level is 2047, the white level is 16200.
+You can download our dataset from [Baidu Netdisk](https://pan.baidu.com/s/1G5_zCt_L_POzwb_mWgpuDA)(key: hxyl). For each magnification scale, there are 150 video pairs and each video contains about 50 frames (To make the movements between neighboring frames more obvious, for each video, we extract frames from the original 150 frames with a step size of three, resulting in a 50 frame sequence). The Bayer pattern of raw data is RGGB, the black level is 2047, the white level is 16200.
 
 ### Copyright ###
 
-The Real-RawVSR dataset is available for the academic purpose only. Any researcher who uses the CRVD dataset should obey the licence as below:
+The Real-RawVSR dataset is available for the academic purpose only. Any researcher who uses the dataset should obey the licence as below:
 
 All of the Real-RawVSR Dataset (data and software) are copyright by [Intelligent Imaging and Reconstruction Laboratory](http://tju.iirlab.org/doku.php), Tianjin University and published under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License. This means that you must attribute the work in the manner specified by the authors, you may not use this work for commercial purposes and if you alter, transform, or build upon this work, you may distribute the resulting work only under the same license.
 
@@ -43,11 +43,10 @@ Deformable convlution setup,run:
 
 ### Prepare Data
 
-Download Real-RawVSR dataset from Baidu Netdisk. Put them in the dataset folder.
+Download Real-RawVSR dataset from [Baidu Netdisk](https://pan.baidu.com/s/1G5_zCt_L_POzwb_mWgpuDA)(key: hxyl). Put them in the dataset folder.
 
 ### Test
 
-Download test data from [Google Drive](https://drive.google.com/file/d/1TfxhmGNLsGzDSZiRLKqrajUGyyhUF_CK/view?usp=sharing). Put them in the dataset folder.<br/>
 Download trained model from [Google Drive](https://drive.google.com/drive/folders/1zBMWiRq352HvurnVDxG0t-_OPVXAwtcQ?usp=sharing). Put them in the weight_checkpoints folder.
 Test 4X data, run:
   ```
@@ -63,7 +62,7 @@ Train 4X data, run:
 ## Acknowledgement
 
 Our work and implementations are inspired by following projects:<br/>
-[EDVR](https://github.com/xinntao/EDVR)<br/>
-[RViDeNet](https://github.com/cao-cong/RViDeNet)<br/>
-[RawVSR](https://github.com/proteus1991/RawVSR)<br/>
-[EBSR](https://github.com/Algolzw/EBSR)<br/>
+[EDVR] (https://github.com/xinntao/EDVR)<br/>
+[RViDeNet] (https://github.com/cao-cong/RViDeNet)<br/>
+[RawVSR] (https://github.com/proteus1991/RawVSR)<br/>
+[EBSR] (https://github.com/Algolzw/EBSR)<br/>
