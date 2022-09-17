@@ -1,6 +1,6 @@
 # Real-RawVSR: Real-World Raw Video Super-Resolution with a Benchmark Dataset (Real-RawVSR)
 
-This repository contains official implementation of Real-RawVSR: Real-World Raw Video Super-Resolution with a Benchmark Dataset, by Huanjing Yue, Zhiming Zhang, and Jingyu Yang.
+This repository contains official implementation of Real-RawVSR: Real-World Raw Video Super-Resolution with a Benchmark Dataset in ECCV 2022, by Huanjing Yue, Zhiming Zhang, and Jingyu Yang.
 
 <p align="center">
   <img width="800" src="https://github.com/zmzhang1998/Real-RawVSR/blob/main/images/framework.jpg">
