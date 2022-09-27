@@ -8,6 +8,7 @@ This repository contains official implementation of Real-RawVSR: Real-World Raw 
 
 ## Paper
 
+[https://arxiv.org/pdf/2209.12475.pdf](https://arxiv.org/pdf/2209.12475.pdf)
 ## Dataset
 
 ### Real-RawVSR Dataset
