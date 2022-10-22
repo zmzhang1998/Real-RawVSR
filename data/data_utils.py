@@ -40,6 +40,39 @@ def random_crop(img_LRs_RAW_list, img_LR_RGB, img_HR_RGB, LR_size, scale):
     img_HR_RGB = img_HR_RGB[:, rnd_h_HR:rnd_h_HR + LR_size * scale, rnd_w_HR:rnd_w_HR + LR_size * scale]
     return img_LRs_RAW_list, img_LR_RGB, img_HR_RGB
 
+def random_crop_EDVR(img_LRs_RGB_list, img_HR_RGB, LR_size, scale):
+    # random crop LR from origin to 64, HR from origin to 256 (size)
+    _, H, W = img_LRs_RGB_list[0].shape
+
+    rnd_w = random.randint(0, W - LR_size) // 2 * 2
+    rnd_h = random.randint(0, H - LR_size) // 2 * 2
+
+    rnd_h_HR, rnd_w_HR = int(rnd_h * scale), int(rnd_w * scale)
+    img_HR_RGB = img_HR_RGB[:, rnd_h_HR:rnd_h_HR + LR_size * scale, rnd_w_HR:rnd_w_HR + LR_size * scale]
+    img_LRs_RGB_list = [v[:, rnd_h:rnd_h + LR_size, rnd_w:rnd_w + LR_size] for v in img_LRs_RGB_list]
+    
+    return img_LRs_RGB_list, img_HR_RGB
+
+
+def random_crop_BasicVSR(img_LRs_RGB_list, img_HRs_RGB_list, LR_size, scale):
+    # random crop LR from origin to 64, HR from origin to 256 (size)
+    _, H, W = img_LRs_RGB_list[0].shape
+
+    rnd_w = random.randint(0, W - LR_size)
+    # while rnd_w % 2 != 0:
+    #     rnd_w = random.randint(0, W - LR_size)
+
+    rnd_h = random.randint(0, H - LR_size)
+    # while rnd_h % 2 != 0:
+    #     rnd_h = random.randint(0, H - LR_size)
+
+    img_LRs_RGB_list = [v[:, rnd_h:rnd_h + LR_size, rnd_w:rnd_w + LR_size] for v in img_LRs_RGB_list]
+
+    rnd_h_HR, rnd_w_HR = int(rnd_h * scale), int(rnd_w * scale)
+    img_HRs_RGB_list = [v[:, rnd_h_HR:rnd_h_HR + LR_size * scale, rnd_w_HR:rnd_w_HR + LR_size * scale] for v in img_HRs_RGB_list]
+
+    return img_LRs_RGB_list, img_HRs_RGB_list
+
 
 def pack_rggb_raw(raw):
     # pack RGGB Bayer raw to 4 channels
