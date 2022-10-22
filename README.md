@@ -48,22 +48,45 @@ Download Real-RawVSR dataset from [Baidu Netdisk](https://pan.baidu.com/s/1G5_zC
 
 ### Test
 
-Download trained model from [Google Drive](https://drive.google.com/drive/folders/1zBMWiRq352HvurnVDxG0t-_OPVXAwtcQ?usp=sharing). Put them in the weight_checkpoints folder.
-Test 4X data, run:
+Download trained model including our network and other networks from [Google Drive](https://drive.google.com/drive/folders/1zBMWiRq352HvurnVDxG0t-_OPVXAwtcQ?usp=sharing). Put them in the weight_checkpoints folder. In particular, the link also contains the pwcnet weight required in the DBSR. Please put it in the models_DBSR folder.
+
+Test our model on $4\times$ data, run:
   ```
-  python test.py --gpu_id 0 --scale 4 --save_image True
+  python test.py --model model --gpu_id 0 --scale 4 --save_image True
+  ```
+  
+You can also test other networks on our dataset, such as:
+
+Test EDVR model on $4\times$ data, run:
+  ```
+  python test_EDVR.py --model model_EDVR --gpu_id 0 --scale 4 --save_image True
   ```
 
+The test commands of other models are similar. Note that you may need to install the packages that are dependent on other models.
 ### Train
 Train 4X data, run:
   ```
-  python train.py --gpu_id 0 --scale 4 --continue_train False
+  python train.py --model model --gpu_id 0 --scale 4 --continue_train False
   ```
 
 ## Acknowledgement
 
 Our work and implementations are inspired by following projects:<br/>
 [EDVR] (https://github.com/xinntao/EDVR)<br/>
+[TDAN] (https://github.com/YapengTian/TDAN-VSR-CVPR-2020)<br/>
+[mmediting] (https://github.com/open-mmlab/mmediting)<br/>
+[DBSR] (https://github.com/goutamgmb/deep-burst-sr)<br/>
 [RViDeNet] (https://github.com/cao-cong/RViDeNet)<br/>
 [RawVSR] (https://github.com/proteus1991/RawVSR)<br/>
 [EBSR] (https://github.com/Algolzw/EBSR)<br/>
+
+## Citation
+If you use our dataset and models in your research, please cite:
+  ```
+  @article{yue2022real,
+  title={Real-RawVSR: Real-World Raw Video Super-Resolution with a Benchmark Dataset},
+  author={Yue, Huanjing and Zhang, Zhiming and Yang, Jingyu},
+  journal={arXiv preprint arXiv:2209.12475},
+  year={2022}
+  }
+  ```
