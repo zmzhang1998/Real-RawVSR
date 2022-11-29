@@ -83,10 +83,12 @@ Our work and implementations are inspired by following projects:<br/>
 ## Citation
 If you use our dataset and models in your research, please cite:
   ```
-  @article{yue2022real,
-  title={Real-RawVSR: Real-World Raw Video Super-Resolution with a Benchmark Dataset},
-  author={Yue, Huanjing and Zhang, Zhiming and Yang, Jingyu},
-  journal={arXiv preprint arXiv:2209.12475},
-  year={2022}
+  @inproceedings{yue2022real,
+    title={Real-RawVSR: Real-World Raw Video Super-Resolution with a Benchmark Dataset},
+    author={Yue, Huanjing and Zhang, Zhiming and Yang, Jingyu},
+    booktitle={European Conference on Computer Vision},
+    pages={608--624},
+    year={2022},
+    organization={Springer}
   }
   ```
