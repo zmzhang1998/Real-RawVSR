@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser(description='Training module')
 parser.add_argument('--model', type=str, default='model', help='base model')
 parser.add_argument('--gpu_id', type=str, default='1', help='gpu id')
 parser.add_argument('--scale', type=int, default=4, help='Multiples of super resolution, default:4X')
-parser.add_argument('--continue_train', type=bool, default=False, help='retrain')
+parser.add_argument('--continue_train', action='store_true', help='retrain')
 args = parser.parse_args()
 opt = get_train_config(args)
 
