@@ -66,7 +66,7 @@ The test commands of other models are similar. Note that you may need to install
 ### Train
 Train 4X data, run:
   ```
-  python train.py --model model --gpu_id 0 --scale 4 --continue_train False
+  python train.py --model model --gpu_id 0 --scale 4
   ```
 
 ## Acknowledgement
